@@ -10,7 +10,8 @@ RUN add-apt-repository -y  ppa:jcfp/ppa && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
-VOLUME ["/config","/data"]
+VOLUME "/configdata/sabnzbd"
+VOLUME "/mediadata/"
 
 EXPOSE 8080 9090
 
