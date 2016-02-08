@@ -15,4 +15,4 @@ VOLUME "/mediadata/"
 
 EXPOSE 8080 9090
 
-CMD ["/usr/bin/sabnzbdplus","--config-file","/config","--console","--server", "0.0.0.0:8080"]
+CMD ["/usr/bin/sabnzbdplus","--config-file","/configdata/sabnzbd","--console","--server", "0.0.0.0:8080"]
