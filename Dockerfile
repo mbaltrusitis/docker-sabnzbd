@@ -4,18 +4,18 @@ MAINTAINER Tim Haak <tim@haak.co>
 RUN add-apt-repository -y  ppa:jcfp/ppa && \
     apt-get -q update && \
     apt-get install -qy --force-yes \
-        sabnzbdplus \
-        sabnzbdplus-theme-classic \
-        sabnzbdplus-theme-mobile \
-        sabnzbdplus-theme-plush \
-        unrar \
-        unzip \
-        p7zip \
-        ffmpeg \
-        par2 \
-        python-yenc \
-        unzip \
-        unrar && \
+    sabnzbdplus \
+    sabnzbdplus-theme-classic \
+    sabnzbdplus-theme-mobile \
+    sabnzbdplus-theme-plush \
+    unrar \
+    unzip \
+    p7zip \
+    ffmpeg \
+    par2 \
+    python-yenc \
+    unzip \
+    unrar && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
