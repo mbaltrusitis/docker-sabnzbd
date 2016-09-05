@@ -40,8 +40,13 @@ RUN apt-get -qy update && \
     rm -rf /tmp/* && \
     git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git "${SCRIPT_PATH}"
 
+ADD ["./autoProcess.ini.default", "./start.sh", "/opt/sabnzbd/"]
+
+RUN chmod u+x /opt/sabnzbd/start.sh && \
+	ln -s /opt/sabnzbd/start.sh /usr/local/bin/start_sabnzbd
+
 VOLUME ["${HOME}", "${SCRIPT_PATH}"]
 EXPOSE 8080 9090
 
-CMD ["sabnzbdplus", "-b", "0", "-s", "0.0.0.0:8080", "--https", "9090"]
+CMD ["start_sabnzbd"]
 
