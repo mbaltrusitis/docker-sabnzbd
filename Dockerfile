@@ -4,6 +4,7 @@ MAINTAINER Matthew Baltrusitis <matthew@baltrusitis.com>
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV HOME /opt/sabnzbd
 ENV SCRIPT_PATH $HOME/scripts
+ENV DOWNLOADS_PATH $HOME/Downloads
 
 RUN apt-get -qy update && \
     apt-get install -qy software-properties-common && \
@@ -45,7 +46,7 @@ ADD ["./autoProcess.ini.default", "./start.sh", "/opt/sabnzbd/"]
 RUN chmod u+x /opt/sabnzbd/start.sh && \
 	ln -s /opt/sabnzbd/start.sh /usr/local/bin/start_sabnzbd
 
-VOLUME ["${HOME}", "${SCRIPT_PATH}"]
+VOLUME ["${HOME}", "${SCRIPT_PATH}", "${DOWNLOADS_PATH}"]
 EXPOSE 8080 9090
 
 CMD ["start_sabnzbd"]
