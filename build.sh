@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build --no-cache -t mbaltrusitis/sabnzbd .
+docker build -t mbaltrusitis/sabnzbd .
